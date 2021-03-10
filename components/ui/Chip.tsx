@@ -1,14 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const Btn = styled.button`
-  color: red !important;
-`
-
-export default function Chip({ label, number, onClick }) {
+export default function Chip({ label, number, onClick, }) {
   return (
-    <Btn>
-      {label} {number}
-    </Btn>
+    <button className='border-2 border-white rounded-md flex shadow-md' onClick={onClick}>
+      <div className='p-1'>{label}</div>
+      <div className='bg-white text-gray-900 font-bold p-1'>{number} </div>
+    </button>
   );
+}
+
+Chip.propTypes = {
+  label: PropTypes.string,
+  number: PropTypes.number,
+  onClick: PropTypes.func,
 }
