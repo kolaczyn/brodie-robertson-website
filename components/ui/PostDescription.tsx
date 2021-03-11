@@ -21,12 +21,20 @@ export default function PostDescription({
       <section className='dim'>
         <ul className='flex text-xl italic gap-3'>
           <li className='img-label'>
-            {/* <img src='/icons/calendar.svg' alt='' /> */}
+          <span className="material-icons">
+          calendar_today
+          </span>
+          <span>
             {date}
+          </span>
           </li>
           <li className='img-label'>
-            {/* <img src='/icons/category.svg' alt='' /> */}
+          <span className="material-icons">
+label
+</span>
+          <span>
             {category}
+          </span>
           </li>
         </ul>
       </section>
