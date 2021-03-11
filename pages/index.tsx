@@ -1,6 +1,17 @@
+import getParsedMarkdownFile from '../lib/getParsedMarkdownFile';
 
-export default function Home() {
+export default function Home({ contentHtml }) {
+  console.log(contentHtml)
   return (
-    <h1>Home Page</h1>
+    <div dangerouslySetInnerHTML={{__html: contentHtml}} />
   );
+}
+
+export async function getStaticProps() {
+  const { contentHtml } = await getParsedMarkdownFile('pages/home.md');
+  return {
+    props: {
+      contentHtml
+    },
+  };
 }
