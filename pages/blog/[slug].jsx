@@ -1,28 +1,30 @@
 import React from 'react';
 
-import postsData from '../../fixtures/postsData';
+import { getSortedPostsData } from '../../lib/getParsedMarkdownFile';
 
-export default function BlogPost({...data}) {
-
-  return <div>
-    <pre>
-      {JSON.stringify(data, null, 2)}
-    </pre>
-    I am BlogPost</div>;
+export default function BlogPost({ ...data }) {
+  return (
+    <div>
+      <pre>{JSON.stringify(data, null, 2)}</pre>I am BlogPost
+      <div dangerouslySetInnerHTML={{__html: data.contentHtml}} />
+    </div>
+  );
 }
 
-export function getStaticPaths() {
-  const paths = postsData.map((post) => ({params: {slug: post.slug}}));
-  console.log(paths);
-  return { paths, fallback: false };
+export async function getStaticPaths() {
+  const sortedPosts = await getSortedPostsData();
+  const slugs = sortedPosts.map((post) => ({ params: { slug: post.slug } }));
+
+  return { paths: slugs, fallback: false };
 }
 
-export function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
   const { slug } = params;
-  const post = postsData.find((post) => post.slug === slug);
+  const sortedPosts = await getSortedPostsData();
+  const post = sortedPosts.find((post) => post.slug === slug);
   return {
     props: {
-      ...post
+      ...post,
     },
   };
 }
