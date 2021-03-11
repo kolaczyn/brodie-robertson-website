@@ -1,7 +1,6 @@
-import getParsedMarkdownFile from '../lib/getParsedMarkdownFile';
+import getParsedMarkdownFile from '../lib/loadFromMarkdownFiles';
 
 export default function Home({ contentHtml }) {
-  console.log(contentHtml)
   return (
     <div dangerouslySetInnerHTML={{__html: contentHtml}} />
   );

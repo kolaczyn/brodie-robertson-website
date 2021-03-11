@@ -4,6 +4,7 @@ import util from 'util';
 import matter from 'gray-matter';
 import remark from 'remark';
 import html from 'remark-html';
+import { string } from 'prop-types';
 
 const readFile = util.promisify(fs.readFile);
 const readDir = util.promisify(fs.readdir);
@@ -54,13 +55,30 @@ export async function getSortedPostsData() {
       return {
         slug,
         contentHtml,
-        ...matterResult.data,
+        ...(matterResult.data as {
+          title: string;
+          date: string;
+          category: string;
+        }),
       };
     })
   );
 
-  return allPostsData.sort((post1, post2) =>
-  // @ts-ignore
-    post1.date < post2.date ? 1 : -1
-  );
+  // Figure out what categories are available and how many items are there in each category
+  const categoryChipsData: {[key: string]: number} = {}
+  allPostsData.forEach((post) => {
+    const { category } = post;
+    if (categoryChipsData.hasOwnProperty(category)) categoryChipsData[category]++;
+    else categoryChipsData[category] = 1;
+  });
+  
+
+  const sortedPostsData = allPostsData
+    .slice()
+    .sort((post1, post2) => (post1.date < post2.date ? 1 : -1));
+
+  return {
+    categoryChipsData,
+    sortedPostsData,
+  };
 }
