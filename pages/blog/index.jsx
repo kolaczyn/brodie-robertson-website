@@ -12,16 +12,34 @@ const lorem =
 
 export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
   const chipsLabels = Object.keys(categoryChipsData);
-  const [selectedCategories, setSelectedCategories] = useState(chipsLabels);
+  const [selectedCategories, setSelectedCategories] = useState(() => new Set());
 
   const handleChipClick = (label) => {
-    if (selectedCategories.includes(label)) {
-      setSelectedCategories(old => old.filter(value => value !== label))
+    if (selectedCategories.has(label)) {
+      setSelectedCategories((oldValue) => {
+        // I can't just do it in one line,
+        // because Set's delete method returns true,
+        // unlike Set's  add method
+        const newValue = new Set(oldValue);
+        newValue.delete(label);
+        return newValue;
+      });
     } else {
-      setSelectedCategories(old => [...old, label])
+      setSelectedCategories((oldValue) => new Set(oldValue).add(label));
     }
-  }
+  };
 
+  const selectPosts = () => {
+    // returns all posts if no category was selected
+    // otherwise returns posts with the selected category
+    if (selectedCategories.size > 0) {
+      return sortedPostsData.filter(({ category }) =>
+        selectedCategories.has(category)
+      );
+    } else {
+      return sortedPostsData;
+    }
+  };
 
   return (
     <section>
@@ -38,11 +56,14 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
           );
         })}
       </section>
-      <pre>
-        {JSON.stringify(selectedCategories, null, stringify)}
-      </pre>
+      {selectedCategories.size > 0 && (
+        <section>
+          <p>Selected categories:</p>
+          <pre>{[...selectedCategories].join(', ')}</pre>
+        </section>
+      )}
       <section className='flex flex-col gap-y-5'>
-        {sortedPostsData.filter(({category}) => selectedCategories.includes(category)).map(({ title, date, category, slug, lead }) => (
+        {selectPosts().map(({ title, date, category, slug, lead }) => (
           <PostDescription
             key={slug}
             slug={slug}
