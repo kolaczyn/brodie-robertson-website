@@ -13,32 +13,24 @@ export default function PostDescription({
     <section>
       <Link href={`/blog/${slug}`}>
         <a>
-          <h2 className='hover:text-gray-300 transition duration-300'>
+          <h3 className='hover:text-gray-300 transition duration-300'>
             {title}
-          </h2>
+          </h3>
         </a>
       </Link>
       <section className='dim'>
         <ul className='flex text-xl italic gap-3'>
           <li className='img-label'>
-          <span className="material-icons">
-          calendar_today
-          </span>
-          <span>
-            {date}
-          </span>
+            <span className='material-icons'>calendar_today</span>
+            <span>{date}</span>
           </li>
           <li className='img-label'>
-          <span className="material-icons">
-label
-</span>
-          <span>
-            {category}
-          </span>
+            <span className='material-icons'>label</span>
+            <span>{category}</span>
           </li>
         </ul>
       </section>
-      <p className='text-2xl'>{children}</p>
+      <p>{children}</p>
     </section>
   );
 }
