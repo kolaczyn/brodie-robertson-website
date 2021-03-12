@@ -1,0 +1,27 @@
+import React from 'react';
+
+import { getPagesData } from '../lib/loadFromMarkdownFiles';
+
+export default function Page({ ...pageData }) {
+ return <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />;
+}
+
+export async function getStaticPaths() {
+  const pagesData = await getPagesData();
+  const slugs = pagesData.map((page) => ({
+    params: { title: page.slug },
+  }));
+  return { paths: slugs, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const pagesData = await getPagesData();
+  const { title } = params;
+
+  const pageData = pagesData.find((post) => post.slug === title);
+  return {
+    props: {
+      ...pageData,
+    },
+  };
+}

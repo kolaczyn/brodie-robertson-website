@@ -1,3 +1,6 @@
+---
+title: 'Contact'
+---
 ## Contact page
 
 Non cupiditate dolorem facere sed. Possimus ipsa reprehenderit consequatur. Cupiditate at omnis incidunt est quas aut. Voluptas veritatis ad dolore quia quibusdam ea. Esse rem cupiditate in officiis.

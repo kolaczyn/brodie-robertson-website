@@ -1,3 +1,6 @@
+---
+title: 'Donate'
+---
 ## Donate page
 
 Voluptas est vero veritatis fugiat quia sed quisquam. Reiciendis veritatis ea corporis et dicta perferendis. Impedit omnis sunt consequatur. Eum aspernatur accusamus recusandae.

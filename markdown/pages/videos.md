@@ -1,3 +1,6 @@
+---
+title: 'Videos'
+---
 ## Watch my videos
 
 Itaque repellendus blanditiis qui omnis tempore velit unde. Nemo consequuntur omnis nobis quia aut libero. Dignissimos fugit quae adipisci voluptas aspernatur. Fugiat est commodi sequi. Quia et ea quo iusto et.

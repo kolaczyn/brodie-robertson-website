@@ -7,9 +7,7 @@ import PropTypes from 'prop-types';
 export default function SidebarBtn({ href, icon, children }) {
   const router = useRouter();
   // we treat '/blog/*' routes differently
-  const isActive: boolean = router.pathname.startsWith('/blog')
-    ? href.startsWith('/blog')
-    : router.pathname === href;
+  const isActive: boolean = router.asPath === href
 
   return (
     <Link href={href}>

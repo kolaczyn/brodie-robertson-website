@@ -34,10 +34,44 @@ export default async function getParsedMarkdownFile(pathToFile: string) {
   };
 }
 
+export async function getPagesData() {
+  // gets data for pages ['/videos', '/podcast', '/donate', '/contact']
+  const pagesDir = path.join(process.cwd(), 'markdown/pages');
+  const fileNames = ['videos', 'podcast', 'donate', 'contact']
+
+  const allPagesData = await Promise.all(
+  fileNames.map(async (fileName) => {
+    const fullPath = path.join(pagesDir, `${fileName}.md`)
+    const fileContents = await readFile(fullPath, 'utf-8')
+
+    const matterResult = matter(fileContents);
+
+    // TODO I should make this snippet a function
+      const processedContent = await remark()
+        .use(html)
+        .process(matterResult.content);
+      const contentHtml = processedContent.toString();
+
+      return {
+        contentHtml,
+        slug: fileName,
+        ...(matterResult.data as {
+          title: string;
+        })
+      }
+  })
+  )
+
+  return allPagesData;
+}
+
 export async function getSortedPostsData() {
   const postsDir = path.join(process.cwd(), 'markdown/posts');
   const fileNames = await readDir(postsDir);
 
+  // Loop through all the files in 'posts' directory
+  // Promise.all, etc is a way to read all the files in its own pace,
+  // and then continue once all the files have been read
   const allPostsData = await Promise.all(
     fileNames.map(async (fileName) => {
       const slug = fileName.replace(/\.md$/, '');
