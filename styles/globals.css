@@ -35,7 +35,7 @@ h6 {
 }
 
 .img-label {
-  @apply flex align-middle gap-1;
+  @apply flex items-center;
 }
 
 ol, ul {
@@ -52,4 +52,8 @@ ol {
 
 code {
   @apply bg-gray-800 rounded px-2 py-1 block shadow;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
 }

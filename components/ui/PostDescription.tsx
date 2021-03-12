@@ -19,12 +19,12 @@ export default function PostDescription({
         </a>
       </Link>
       <section className='dim'>
-        <ul className='flex text-xl italic gap-3'>
-          <li className='img-label'>
-            <span className='material-icons'>calendar_today</span>
+        <ul className='flex text-base italic gap-3'>
+          <li className='img-label gap-1'>
+            <span className='material-icons md-18'>calendar_today</span>
             <span>{date}</span>
           </li>
-          <li className='img-label'>
+          <li className='img-label gap-1'>
             <span className='material-icons'>label</span>
             <span>{category}</span>
           </li>
