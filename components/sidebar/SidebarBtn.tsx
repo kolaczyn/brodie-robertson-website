@@ -1,9 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-export default function SidebarBtn({ href, icon, children, isActive }) {
+export default function SidebarBtn({ href, icon, children }) {
+  const router = useRouter();
+  // we treat '/blog/*' routes differently
+  const isActive: boolean = router.pathname.startsWith('/blog')
+    ? href.startsWith('/blog')
+    : router.pathname === href;
+
   return (
     <Link href={href}>
       <a className='font-bold text-3xl group'>
@@ -24,7 +31,6 @@ export default function SidebarBtn({ href, icon, children, isActive }) {
 SidebarBtn.propTypes = {
   icon: PropTypes.string,
   children: PropTypes.node,
-  isActive: PropTypes.bool,
   link: PropTypes.string,
 };
 
