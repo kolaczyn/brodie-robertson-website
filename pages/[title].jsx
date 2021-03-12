@@ -1,9 +1,17 @@
 import React from 'react';
+import Head from 'next/head';
 
 import { getPagesData } from '../lib/loadFromMarkdownFiles';
 
 export default function Page({ ...pageData }) {
- return <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />;
+  return (
+    <>
+      <Head>
+        <title>{pageData.title}</title>
+      </Head>
+      <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />
+    </>
+  );
 }
 
 export async function getStaticPaths() {

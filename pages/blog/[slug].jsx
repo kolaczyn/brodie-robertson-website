@@ -1,13 +1,17 @@
 import React from 'react';
+import Head from 'next/head';
 
 import { getSortedPostsData } from '../../lib/loadFromMarkdownFiles';
 
 export default function BlogPost({ ...data }) {
   return (
-    <div>
+    <>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
       <pre>{JSON.stringify(data, null, 2)}</pre>I am BlogPost
       <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
-    </div>
+    </>
   );
 }
 

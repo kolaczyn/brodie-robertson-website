@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 
 import PostDescription from '../../components/ui/PostDescription';
 import Chip from '../../components/ui/Chip';
@@ -42,6 +43,10 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
   };
 
   return (
+    <>
+    <Head>
+      <title>Blog</title>
+    </Head>
     <section>
       <section className='flex gap-2.5 mb-8 pt-4 flex-wrap'>
         {chipsLabels.map((label) => {
@@ -76,6 +81,7 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
         ))}
       </section>
     </section>
+    </>
   );
 }
 
