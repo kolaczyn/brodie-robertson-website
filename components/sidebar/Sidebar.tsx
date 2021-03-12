@@ -4,7 +4,10 @@ import SidebarBtn from './SidebarBtn';
 
 export default function Sidebar({className}) {
   return (
-    <div className={classnames('bg-gray-800 w-1/3 rounded-lg h-screen shadow-lg', className)}>
+    <>
+    {/* this <div> and className specifying width of the <Sidebar>. is the trick making the <Sidebar> stick in the same place  */}
+    <div className={className} />
+    <div className={classnames('bg-gray-800 w-1/3 fixed h-screen shadow-lg', className)}>
       <nav className='flex gap-4 flex-col p-4'>
         <SidebarBtn href='/' icon='home' isActive>Home</SidebarBtn>
         <SidebarBtn href='/blog' icon='article'>Blog</SidebarBtn>
@@ -14,5 +17,6 @@ export default function Sidebar({className}) {
         <SidebarBtn href='/contact' icon='message'>Contact</SidebarBtn>
       </nav>
     </div>
-  );
+    </>
+  ); 
 }
