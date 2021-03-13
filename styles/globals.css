@@ -51,7 +51,7 @@ ol {
 }
 
 code {
-  @apply bg-gray-800 rounded px-2 py-1 block shadow;
+  @apply bg-gray-800 rounded px-2 py-1 shadow;
 }
 
 .material-icons.md-18 {

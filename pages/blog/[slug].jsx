@@ -9,7 +9,7 @@ export default function BlogPost({ ...data }) {
       <Head>
         <title>{data.title}</title>
       </Head>
-      <pre>{JSON.stringify(data, null, 2)}</pre>I am BlogPost
+      {/* <pre>{JSON.stringify(data, null, 2)}</pre>I am BlogPost */}
       <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
     </>
   );
