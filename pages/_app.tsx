@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     <div className='bg-gray-900 text-white min-h-screen'>
       <div className='container mx-auto flex'>
         <Sidebar width='w-1/4' />
-        <main className='w-3/4 px-14 py-4'>
+        <main className='w-3/4'>
           <Component {...pageProps} />
         </main>
       </div>

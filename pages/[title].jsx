@@ -9,7 +9,9 @@ export default function Page({ ...pageData }) {
       <Head>
         <title>{pageData.title}</title>
       </Head>
-      <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />
+      <section className='px-14 py-4'>
+        <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />
+      </section>
     </>
   );
 }

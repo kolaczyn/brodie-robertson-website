@@ -47,7 +47,7 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
     <Head>
       <title>Blog</title>
     </Head>
-    <section>
+    <section className='px-14 py-4'>
       <section className='flex gap-2.5 mb-8 pt-4 flex-wrap'>
         {chipsLabels.map((label) => {
           const number = categoryChipsData[label];

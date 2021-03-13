@@ -20,7 +20,7 @@ export default function SidebarBtn({ href, icon, children }) {
           )}
         >
           <span className='material-icons'>{icon}</span>
-          <p>{children}</p>
+          <span>{children}</span>
         </span>
       </a>
     </Link>

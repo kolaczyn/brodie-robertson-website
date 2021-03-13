@@ -30,7 +30,7 @@ export default function PostDescription({
           </li>
         </ul>
       </section>
-      <p>{children}</p>
+      <section>{children}</section>
     </section>
   );
 }

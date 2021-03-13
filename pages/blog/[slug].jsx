@@ -10,7 +10,9 @@ export default function BlogPost({ ...data }) {
         <title>{data.title}</title>
       </Head>
       {/* <pre>{JSON.stringify(data, null, 2)}</pre>I am BlogPost */}
-      <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+      <section className='px-14 py-4'>
+        <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+      </section>
     </>
   );
 }
