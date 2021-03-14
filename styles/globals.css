@@ -8,6 +8,10 @@ body {
   @apply text-xl;
 }
 
+html {
+  @apply overflow-y-scroll;
+}
+
 h1, h2, h3, h4, h5, h6 {
   @apply font-serif font-bold;
 }
@@ -56,4 +60,16 @@ code {
 
 .material-icons.md-18 {
   font-size: 18px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-800;
 }

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdi/svg": "^5.9.55",
     "classnames": "^2.2.6",
     "gray-matter": "^4.0.2",
     "next": "10.0.8",
