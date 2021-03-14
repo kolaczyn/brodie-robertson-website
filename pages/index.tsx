@@ -16,8 +16,8 @@ const cardsData = [
     content: lorem,
   },
   {
-    title: 'Second blog post',
-    subtitle: 'September 10 2020',
+    title: '',
+    subtitle: 'This card has no text on top of the image',
     imgSrc: '/test-image.jpg',
     content: lorem,
   },
@@ -37,17 +37,17 @@ export default function Home({ contentHtml }) {
       </Head>
       <header className='w-full h-64 relative'>
         <ShadedImage src='/test-image.jpg'>
-          <h1>Hey, Welcome on my website</h1>
+          <div className='px-14 py-2'>
+            <h1>Hey, Welcome on my website</h1>
+          </div>
         </ShadedImage>
       </header>
       <section className='px-14 py-4'>
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         <h2>Latest Blog Posts</h2>
         <section className='grid grid-cols-3 gap-8'>
-          {cardsData.map(({ content, ...props }) => (
-            <Card
-              {...props}
-            >
+          {cardsData.map(({ title, content, ...props }) => (
+            <Card key={title} title={title} {...props}>
               {content}
             </Card>
           ))}

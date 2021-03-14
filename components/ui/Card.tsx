@@ -19,7 +19,12 @@ export default function Card({ title, subtitle, imgSrc, children }: CardProps) {
       <a>
         <section className='bg-gray-800 shadow hover:shadow-xl transition duration-300 cursor-pointer rounded-md'>
           <ShadedImage src={imgSrc}>
-            <h3>{title}</h3>
+            {/* don't add title if there is no title. That's because <Card> doesn't add black gradient to the image if there is no title */}
+            {title && (
+              <div className='p-3'>
+                <h3>{title}</h3>
+              </div>
+            )}
           </ShadedImage>
           <section className={paddingClass}>
             <p className='dim text-base'>{subtitle}</p>
