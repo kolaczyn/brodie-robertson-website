@@ -17,8 +17,8 @@ export default function Card({ title, subtitle, imgSrc, children }: CardProps) {
   return (
     <Link href='/blog'>
       <a>
-        <section className='bg-gray-800 shadow hover:shadow-xl transition duration-300 cursor-pointer rounded-md'>
-          <ShadedImage src={imgSrc}>
+        <section className='bg-body shadow hover:shadow-xl transition duration-300 cursor-pointer rounded-md'>
+          <ShadedImage src={imgSrc} gradientColor='from-body'>
             {/* don't add title if there is no title. That's because <Card> doesn't add black gradient to the image if there is no title */}
             {title && (
               <div className='p-3'>

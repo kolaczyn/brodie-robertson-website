@@ -36,15 +36,17 @@ export default function Home({ contentHtml }) {
         <title>Tech Blog</title>
       </Head>
       <header className='w-full h-64 relative'>
-        <ShadedImage src='/test-image.jpg'>
+        <ShadedImage src='/test-image.jpg' gradientColor='from-main'>
           <div className='px-14 py-2'>
             <h1>Hey, Welcome on my website</h1>
           </div>
         </ShadedImage>
       </header>
       <section className='px-14 py-4'>
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        <h2>Latest Blog Posts</h2>
+        <article>
+          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </article>
+        <h2 className='mb-4'>Latest Blog Posts</h2>
         <section className='grid grid-cols-3 gap-8'>
           {cardsData.map(({ title, content, ...props }) => (
             <Card key={title} title={title} {...props}>

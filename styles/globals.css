@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
-  @apply text-xl;
+  @apply text-xl text-gray-300;
 }
 
 html {
@@ -13,7 +13,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-serif font-bold;
+  @apply font-serif font-bold text-white;
 }
 h1 {
   @apply text-5xl;
@@ -55,7 +55,13 @@ ol {
 }
 
 code {
-  @apply bg-gray-800 rounded px-2 py-1 shadow;
+  @apply bg-gray-800 rounded px-4 py-3 shadow;
+}
+
+article code {
+  @apply w-full;
+  overflow-x: scroll;
+  display: block;
 }
 
 .material-icons.md-18 {
@@ -67,9 +73,41 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  @apply bg-body;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-800;
+  @apply bg-main;
+}
+
+article p {
+  @apply my-2;
+}
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  @apply mt-2 mb-3;
+}
+
+.p-main-x {
+  @apply px-14;
+}
+
+.p-main-y {
+  @apply py-8;
+}
+
+.p-sidebar-x {
+  @apply px-4;
+}
+
+/* constant defining padding of the buttons in the sidebar,
+it's also use to make the text in the <Sidebar>'s footer
+and header align with the text in the buttons
+ */
+.p-sidebar-btn-x {
+  @apply px-5;
 }
