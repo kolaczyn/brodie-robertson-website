@@ -6,6 +6,11 @@ module.exports = {
       fontFamily: {
         'serif': ['ui-serif', 'Merriweather']
       },
+      colors: {
+        body: '#1D1F21',
+        sidebar: '#1D1F21',
+        main: '#111316',
+      }
     },
   },
   variants: {

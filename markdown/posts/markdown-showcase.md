@@ -51,6 +51,7 @@ indenting the block, you can use delimited blocks, if you like:
 define foobar() {
     print "Welcome to flavor country!";
 }
+this is a very long code line line line line vthis is a very long code line line line line 
 ~~~
 
 (which makes copying & pasting easier). You can optionally mark the
