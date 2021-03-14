@@ -15,7 +15,7 @@ export default function SidebarBtn({ href, icon, children }) {
       <a className='font-bold text-3xl group'>
         <span
           className={classnames(
-            'group-hover:bg-main inline-flex items-center gap-3 px-5 py-3 rounded-full group-hover:shadow-lg transition duration-300 ease-in',
+            'group-hover:bg-main inline-flex items-center gap-3 p-sidebar-btn-x py-3 rounded-full group-hover:shadow-lg transition duration-300 ease-in',
             { 'bg-main': isActive }
           )}
         >

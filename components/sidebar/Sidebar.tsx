@@ -7,7 +7,7 @@ import Footer from './Footer';
 export default function Sidebar({width}) {
   return (
     <div className={classnames(width, 'bg-sidebar min-h-screen')}>
-    <div className={classnames('sticky top-0 min-h-screen px-4 py-8 flex flex-col')}>
+    <div className={classnames('sticky top-0 min-h-screen px-4 p-main-y flex flex-col')}>
         <Logo/>
         <nav className='flex flex-grow gap-3 flex-col'>
           <SidebarBtn href='/' icon='home'>Home</SidebarBtn>

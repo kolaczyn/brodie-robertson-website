@@ -91,3 +91,23 @@ article h5,
 article h6 {
   @apply mt-2 mb-3;
 }
+
+.p-main-x {
+  @apply px-14;
+}
+
+.p-main-y {
+  @apply py-8;
+}
+
+.p-sidebar-x {
+  @apply px-4;
+}
+
+/* constant defining padding of the buttons in the sidebar,
+it's also use to make the text in the <Sidebar>'s footer
+and header align with the text in the buttons
+ */
+.p-sidebar-btn-x {
+  @apply px-5;
+}
