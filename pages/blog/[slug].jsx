@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 
+import HeroImage from '../../components/ui/HeroImage';
+
 import { getSortedPostsData } from '../../lib/loadFromMarkdownFiles';
 
 export default function BlogPost({ ...data }) {
@@ -10,8 +12,12 @@ export default function BlogPost({ ...data }) {
         <title>{data.title}</title>
       </Head>
       {/* <pre>{JSON.stringify(data, null, 2)}</pre>I am BlogPost */}
-      <article className='px-14 py-4'>
-        <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+      <article>
+        <HeroImage imgSrc={data.image}>{data.title}</HeroImage>
+        <div className='px-14 py-4'>
+          <div className="dim">{data.date}</div>
+          <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+        </div>
       </article>
     </>
   );

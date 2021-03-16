@@ -4,6 +4,7 @@ import Head from 'next/head';
 import getParsedMarkdownFile, { getSortedPostsData } from '../lib/loadFromMarkdownFiles';
 import ShadedImage from '../components/ui/ShadedImage';
 import Card from '../components/ui/Card';
+import HeroImage from '../components/ui/HeroImage';
 
 const lorem =
   'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ratione hic commodi nemo error dolor...';
@@ -35,13 +36,9 @@ export default function Home({ contentHtml, latestPosts }) {
       <Head>
         <title>Tech Blog</title>
       </Head>
-      <header className='w-full h-64 relative'>
-        <ShadedImage src='/img/hero.jpg' gradientColor='from-main'>
-          <div className='px-14 py-2'>
-            <h1>Hey, Welcome on my website</h1>
-          </div>
-        </ShadedImage>
-      </header>
+      <HeroImage imgSrc='/img/hero.jpg'>
+        Hey, Welcome on my website
+      </HeroImage>
       <section className='px-14 py-4'>
         <article>
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
