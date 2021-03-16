@@ -2,6 +2,7 @@
 title: 'Markdown showcase'
 date: '2019-06-09'
 category: 'Lorem'
+image: 'https://source.unsplash.com/PMVBRYY9F3s'
 --- 
 ## I just took a random file explaining Markdown
 

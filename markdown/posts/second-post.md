@@ -2,6 +2,7 @@
 title: 'This is some random post'
 date: '2021-01-01'
 category: 'Lifestyle'
+image: 'https://source.unsplash.com/tQagUWpAx5k'
 ---
 Aut aperiam maiores dolores non eaque dolorum minus. Omnis aut voluptatem quos iste sapiente ea. Distinctio vel molestiae architecto est in quas ratione amet. Ea asperiores placeat quis rem recusandae. Et neque rerum aliquid voluptatum eaque voluptas quia aperiam. Deserunt est consequatur quia ducimus minus.
 

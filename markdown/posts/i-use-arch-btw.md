@@ -2,6 +2,7 @@
 title: 'I use Arch btw'
 date: '2020-03-1'
 category: 'Linux'
+image: 'https://source.unsplash.com/NNR-FH3HGsE'
 ---
 ## Lorem
 Quasi ipsam est aliquam dolorem placeat est natus debitis. Sed excepturi et voluptatem. Nihil quo qui et delectus voluptas distinctio dolore deleniti. Aperiam vel qui qui odit blanditiis. Ut qui soluta ut aut qui fugiat.

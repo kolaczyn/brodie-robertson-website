@@ -36,7 +36,7 @@ export default function Home({ contentHtml, latestPosts }) {
         <title>Tech Blog</title>
       </Head>
       <header className='w-full h-64 relative'>
-        <ShadedImage src='/test-image.jpg' gradientColor='from-main'>
+        <ShadedImage src='/img/hero.jpg' gradientColor='from-main'>
           <div className='px-14 py-2'>
             <h1>Hey, Welcome on my website</h1>
           </div>
@@ -48,8 +48,8 @@ export default function Home({ contentHtml, latestPosts }) {
         </article>
         <h2 className='mb-4'>Latest Blog Posts</h2>
           <section className='grid grid-cols-3 gap-8'>
-          {latestPosts.map(({ title, date, slug}) => (
-            <Card key={title} title={title} subtitle={date} imgSrc='/test-image.jpg' href={`/blog/${slug}`}>
+          {latestPosts.map(({ title, date, slug, image}) => (
+            <Card key={title} title={title} subtitle={date} imgSrc={image} href={`/blog/${slug}`}>
               {lorem}
             </Card>
           ))}

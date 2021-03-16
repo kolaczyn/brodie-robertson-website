@@ -1,7 +1,8 @@
 ---
 title: 'Ubuntu Installation Guide'
-date: '2021-03-05'
+date: '2020-03-05'
 category: 'Linux'
+image: 'https://source.unsplash.com/Tjbk79TARiE'
 ---
 ## Et et officiis
 Ut error modi adipisci ut et et. Culpa debitis beatae optio. Officiis veniam et quis hic a ut repellendus maxime. Suscipit sed est totam exercitationem. Ut beatae officiis consequatur id.

@@ -93,6 +93,7 @@ export async function getSortedPostsData() {
           title: string;
           date: string;
           category: string;
+          image: string;
         }),
       };
     })
