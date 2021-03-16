@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import getParsedMarkdownFile from '../lib/loadFromMarkdownFiles';
+import getParsedMarkdownFile, { getSortedPostsData } from '../lib/loadFromMarkdownFiles';
 import ShadedImage from '../components/ui/ShadedImage';
 import Card from '../components/ui/Card';
 
@@ -29,7 +29,7 @@ const cardsData = [
   },
 ];
 
-export default function Home({ contentHtml }) {
+export default function Home({ contentHtml, latestPosts }) {
   return (
     <>
       <Head>
@@ -47,10 +47,10 @@ export default function Home({ contentHtml }) {
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </article>
         <h2 className='mb-4'>Latest Blog Posts</h2>
-        <section className='grid grid-cols-3 gap-8'>
-          {cardsData.map(({ title, content, ...props }) => (
-            <Card key={title} title={title} {...props}>
-              {content}
+          <section className='grid grid-cols-3 gap-8'>
+          {latestPosts.map(({ title, date, slug}) => (
+            <Card key={title} title={title} subtitle={date} imgSrc='/test-image.jpg' href={`/blog/${slug}`}>
+              {lorem}
             </Card>
           ))}
         </section>
@@ -61,9 +61,12 @@ export default function Home({ contentHtml }) {
 
 export async function getStaticProps() {
   const { contentHtml } = await getParsedMarkdownFile('pages/home.md');
+  const {sortedPostsData} = await getSortedPostsData()
+  const latestPosts = sortedPostsData.slice(0, 3);
   return {
     props: {
       contentHtml,
+      latestPosts,
     },
   };
 }

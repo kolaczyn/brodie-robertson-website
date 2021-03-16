@@ -9,13 +9,14 @@ interface CardProps {
   subtitle: string;
   imgSrc: string;
   children: ReactNode;
+  href: string,
 }
 
 const paddingClass = 'p-3';
 
-export default function Card({ title, subtitle, imgSrc, children }: CardProps) {
+export default function Card({ title, subtitle, imgSrc, children, href }: CardProps) {
   return (
-    <Link href='/blog'>
+    <Link href={href}>
       <a>
         <section className='bg-body shadow hover:shadow-xl transition duration-300 cursor-pointer rounded-md'>
           <ShadedImage src={imgSrc} gradientColor='from-body'>
@@ -41,6 +42,7 @@ Card.propTypes = {
   subtitle: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
 };
 
 Card.defaultProps = {
