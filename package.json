@@ -12,6 +12,8 @@
     "@material-ui/icons": "^4.11.2",
     "@mdi/svg": "^5.9.55",
     "classnames": "^2.2.6",
+    "google-auth-library": "^7.0.2",
+    "googleapis": "^67.1.1",
     "gray-matter": "^4.0.2",
     "next": "10.0.8",
     "next-react-svg": "^1.1.2",
