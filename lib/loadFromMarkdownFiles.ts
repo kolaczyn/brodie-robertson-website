@@ -4,14 +4,10 @@ import util from 'util';
 import matter from 'gray-matter';
 import remark from 'remark';
 import html from 'remark-html';
-import { string } from 'prop-types';
 
 const readFile = util.promisify(fs.readFile);
 const readDir = util.promisify(fs.readdir);
 
-// TODO it's a bit messy with the functions being extremely similar, it just doesn't seem right
-
-// TODO make one function for gettings posts' metadata, and one for getting the post with metadata
 export default async function getParsedMarkdownFile(pathToFile: string) {
   // Expected input example:
   // pathToFile='pages/contact.md'

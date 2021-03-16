@@ -4,11 +4,10 @@ import Head from 'next/head';
 
 import getParsedMarkdownFile, {
   getSortedPostsData,
-} from '../lib/loadFromMarkdownFiles';
-import ShadedImage from '../components/ui/ShadedImage';
-import Card from '../components/ui/Card';
-import HeroImage from '../components/ui/HeroImage';
-import fetchLatestVideos from '../lib/fetchLatestVideos';
+} from '@/lib/loadFromMarkdownFiles';
+import Card from '@/components/ui/Card';
+import HeroImage from '@/components/ui/HeroImage';
+import fetchLatestVideos from '@/lib/fetchLatestVideos';
 
 const lorem =
   'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ratione hic commodi nemo error dolor...';
@@ -93,4 +92,4 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     revalidate: 7200,
   };
-}
+};

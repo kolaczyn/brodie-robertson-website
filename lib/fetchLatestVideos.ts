@@ -8,7 +8,8 @@ const channelsId: Array<string> = [
 
 export default async () => {
   const apiKey = process.env.YOUTUBE_API_KEY;
-  if (apiKey === undefined) throw new Error('There is no YOUTUBE_API_KEY in .env.local file')
+  if (apiKey === undefined)
+    throw new Error('There is no YOUTUBE_API_KEY in .env.local file');
   const results = await Promise.all(
     channelsId.map(async (id) => {
       const result = await google.youtube('v3').search.list({

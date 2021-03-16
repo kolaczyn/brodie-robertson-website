@@ -1,9 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 
-import HeroImage from '../../components/ui/HeroImage';
-
-import { getSortedPostsData } from '../../lib/loadFromMarkdownFiles';
+import HeroImage from '@/components/ui/HeroImage';
+import { getSortedPostsData } from '@/lib/loadFromMarkdownFiles';
 
 export default function BlogPost({ ...data }) {
   return (

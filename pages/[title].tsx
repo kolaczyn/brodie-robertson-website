@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { getPagesData } from '../lib/loadFromMarkdownFiles';
+import { getPagesData } from '@/lib/loadFromMarkdownFiles';
 
 export default function Page({ ...pageData }) {
   return (

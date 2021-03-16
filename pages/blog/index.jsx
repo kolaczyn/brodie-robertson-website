@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-
-import PostDescription from '../../components/ui/PostDescription';
-import Chip from '../../components/ui/Chip';
-
-import { getSortedPostsData } from '../../lib/loadFromMarkdownFiles';
 import { stringify } from 'remark';
+
+import PostDescription from '@/components/ui/PostDescription';
+import Chip from '@/components/ui/Chip';
+import { getSortedPostsData } from '@/lib/loadFromMarkdownFiles';
 
 // TODO I'm gonna programatically add lead on the posts later
 const lorem =
