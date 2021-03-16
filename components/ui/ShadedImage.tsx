@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Image, { ImageProps } from 'next/image';
+import Image from 'next/image';
 
 interface PropsType {
   children: ReactNode;

@@ -56,17 +56,12 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
               key={label}
               label={label}
               number={number}
+              active={selectedCategories.has(label)}
               onClick={() => handleChipClick(label)}
             />
           );
         })}
       </section>
-      {selectedCategories.size > 0 && (
-        <section>
-          <p>Selected categories:</p>
-          <pre>{[...selectedCategories].join(', ')}</pre>
-        </section>
-      )}
       <section className='flex flex-col gap-y-5'>
         {selectPosts().map(({ title, date, category, slug, lead }) => (
           <PostDescription
