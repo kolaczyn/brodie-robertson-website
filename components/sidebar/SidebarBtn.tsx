@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-export default function SidebarBtn({ href, icon, children }) {
+export default function SidebarBtn({ href, icon: Icon, children }) {
   const router = useRouter();
   const path = router.asPath;
   // we treat '/blog/*' routes differently
@@ -19,7 +19,7 @@ export default function SidebarBtn({ href, icon, children }) {
             { 'bg-main': isActive }
           )}
         >
-          <span className='material-icons'>{icon}</span>
+          <Icon />
           <span>{children}</span>
         </span>
       </a>

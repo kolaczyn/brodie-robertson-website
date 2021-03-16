@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
 body {
   @apply text-xl text-gray-300;
 }
@@ -42,30 +40,27 @@ h6 {
   @apply flex items-center;
 }
 
-ol, ul {
-  @apply list-inside;
-}
-
-ul {
-  @apply list-disc;
-}
-
-ol {
-  @apply list-decimal;
-}
 
 code {
   @apply bg-gray-800 rounded px-4 py-3 shadow;
+}
+
+article ol, article ul {
+  @apply list-inside;
+}
+
+article ul {
+  @apply list-disc;
+}
+
+article ol {
+  @apply list-decimal;
 }
 
 article code {
   @apply w-full;
   overflow-x: scroll;
   display: block;
-}
-
-.material-icons.md-18 {
-  font-size: 18px;
 }
 
 ::-webkit-scrollbar {
