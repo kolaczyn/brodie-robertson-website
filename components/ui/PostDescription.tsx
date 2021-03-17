@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
+import CategoryIcon from '@material-ui/icons/Category';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+
+const iconsSize = { fontSize: '18px' };
 export default function PostDescription({
   title,
   date,
@@ -18,14 +22,14 @@ export default function PostDescription({
           </h3>
         </a>
       </Link>
-      <section className='dim'>
+      <section className='dim text-5xl'>
         <ul className='flex text-base italic gap-3'>
           <li className='img-label gap-1'>
-            <span className='material-icons md-18'>calendar_today</span>
+            <CalendarTodayIcon style={iconsSize} />
             <span>{date}</span>
           </li>
           <li className='img-label gap-1'>
-            <span className='material-icons'>label</span>
+            <CategoryIcon style={iconsSize} />
             <span>{category}</span>
           </li>
         </ul>
