@@ -24,18 +24,18 @@ const sidebarData: Array<{ href: string; icon: any; label: string }> = [
 export default function Sidebar({ width }) {
   return (
     <div className={classnames(width, 'bg-sidebar min-h-screen')}>
-      <div
-        className={classnames(
-          'sticky top-0 min-h-screen px-4 p-main-y flex flex-col'
-        )}
-      >
+      <div className={'sticky top-0 min-h-screen px-4 p-main-y flex flex-col'}>
         <Logo />
-        <nav className='flex flex-grow gap-3 flex-col'>
-          {sidebarData.map(({ href, icon, label }) => (
-            <SidebarBtn key={href} href={href} icon={icon}>
-              {label}
-            </SidebarBtn>
-          ))}
+        <nav className='flex-grow'>
+          <ul className='flex flex-col'>
+            {sidebarData.map(({ href, icon, label }) => (
+              <li key={href}>
+                <SidebarBtn href={href} icon={icon}>
+                  {label}
+                </SidebarBtn>
+              </li>
+            ))}
+          </ul>
         </nav>
         <Footer />
       </div>

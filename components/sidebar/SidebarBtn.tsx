@@ -12,11 +12,12 @@ export default function SidebarBtn({ href, icon: Icon, children }) {
 
   return (
     <Link href={href}>
-      <a className='font-bold text-3xl group'>
+      <a className='font-bold text-3xl group w-full inline-block py-1'>
         <span
           className={classnames(
-            'group-hover:bg-main inline-flex items-center gap-3 p-sidebar-btn-x py-3 rounded-full group-hover:shadow-lg transition duration-300 ease-in',
-            { 'bg-main': isActive }
+            'inline-flex items-center gap-3 p-sidebar-btn-x py-3 rounded-full group-hover:shadow-lg transition duration-300 ease-in',
+            // if it's active, it's always darker (black). Otherwise just change bg-color on hover
+             isActive ? 'bg-black' : 'group-hover:bg-main'
           )}
         >
           <Icon />
@@ -28,7 +29,7 @@ export default function SidebarBtn({ href, icon: Icon, children }) {
 }
 
 SidebarBtn.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   children: PropTypes.node,
   link: PropTypes.string,
 };
