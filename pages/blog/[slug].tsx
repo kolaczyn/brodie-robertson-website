@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import HeroImage from '@/components/ui/HeroImage';
 import { getSortedPostsData } from '@/lib/loadFromMarkdownFiles';
@@ -14,7 +15,7 @@ export default function BlogPost({ ...data }) {
       <article>
         <HeroImage imgSrc={data.image}>{data.title}</HeroImage>
         <div className='px-14 py-4'>
-          <div className="dim">{data.date}</div>
+          <div className='dim'>{data.date}</div>
           <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
         </div>
       </article>
@@ -22,16 +23,16 @@ export default function BlogPost({ ...data }) {
   );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const { sortedPostsData } = await getSortedPostsData();
   const slugs = sortedPostsData.map((post) => ({
     params: { slug: post.slug },
   }));
 
   return { paths: slugs, fallback: false };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params;
   const { sortedPostsData } = await getSortedPostsData();
   const post = sortedPostsData.find((post) => post.slug === slug);
@@ -40,4 +41,4 @@ export async function getStaticProps({ params }) {
       ...post,
     },
   };
-}
+};

@@ -6,13 +6,21 @@ import CategoryIcon from '@material-ui/icons/Category';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 
 const iconsSize = { fontSize: '18px' };
+
+interface PostDescriptionProps {
+  title: string;
+  date: string;
+  category: string;
+  slug: string;
+  children: React.ReactNode;
+}
 export default function PostDescription({
   title,
   date,
   category,
   slug,
   children,
-}) {
+}: PostDescriptionProps) {
   return (
     <section>
       <Link href={`/blog/${slug}`}>
@@ -40,9 +48,9 @@ export default function PostDescription({
 }
 
 PostDescription.propTypes = {
-  title: PropTypes.string,
-  date: PropTypes.string,
-  category: PropTypes.string,
-  slug: PropTypes.string,
-  children: PropTypes.node,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };

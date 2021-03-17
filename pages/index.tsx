@@ -12,27 +12,6 @@ import fetchLatestVideos from '@/lib/fetchLatestVideos';
 const lorem =
   'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ratione hic commodi nemo error dolor...';
 
-const cardsData = [
-  {
-    title: 'Latest blog post',
-    subtitle: 'September 10 2020',
-    imgSrc: '/test-image.jpg',
-    content: lorem,
-  },
-  {
-    title: '',
-    subtitle: 'This card has no text on top of the image',
-    imgSrc: '/test-image.jpg',
-    content: lorem,
-  },
-  {
-    title: 'The third impact',
-    subtitle: 'June 20 2020',
-    imgSrc: '/test-image.jpg',
-    content: lorem,
-  },
-];
-
 export default function Home({ contentHtml, latestPosts, latestVideos }) {
   return (
     <>
@@ -46,7 +25,7 @@ export default function Home({ contentHtml, latestPosts, latestVideos }) {
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </article>
         <h2 className='mb-4'>Latest Blog Posts</h2>
-        <section className='grid grid-cols-3 gap-8'>
+        <section className='grid grid-cols-3 gap-8 mb-8'>
           {latestPosts.map(({ title, date, slug, image }) => (
             <Card
               key={title}
@@ -61,10 +40,9 @@ export default function Home({ contentHtml, latestPosts, latestVideos }) {
         </section>
         <section className='grid grid-cols-3 gap-8'>
           {latestVideos.map(
-            ({ videoId, title, description, publishedAt, thumbnail }) => (
+            ({ videoId, description, publishedAt, thumbnail }) => (
               <Card
-                key={title}
-                title={title}
+                key={videoId}
                 subtitle={publishedAt}
                 imgSrc={thumbnail}
                 href={`https://www.youtube.com/watch?v=${videoId}`}

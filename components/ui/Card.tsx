@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
@@ -8,13 +8,19 @@ interface CardProps {
   title: string;
   subtitle: string;
   imgSrc: string;
-  children: ReactNode;
-  href: string,
+  children: React.ReactNode;
+  href: string;
 }
 
 const paddingClass = 'p-3';
 
-export default function Card({ title, subtitle, imgSrc, children, href }: CardProps) {
+export default function Card({
+  title,
+  subtitle,
+  imgSrc,
+  children,
+  href,
+}: CardProps) {
   return (
     <Link href={href}>
       <a>

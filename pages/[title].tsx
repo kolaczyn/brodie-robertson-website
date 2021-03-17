@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { getPagesData } from '@/lib/loadFromMarkdownFiles';
 
@@ -16,15 +17,15 @@ export default function Page({ ...pageData }) {
   );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const pagesData = await getPagesData();
   const slugs = pagesData.map((page) => ({
     params: { title: page.slug },
   }));
   return { paths: slugs, fallback: false };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pagesData = await getPagesData();
   const { title } = params;
 
@@ -34,4 +35,4 @@ export async function getStaticProps({ params }) {
       ...pageData,
     },
   };
-}
+};

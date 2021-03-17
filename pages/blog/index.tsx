@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { stringify } from 'remark';
+import { GetStaticProps } from 'next';
 
 import PostDescription from '@/components/ui/PostDescription';
 import Chip from '@/components/ui/Chip';
@@ -43,43 +43,43 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
 
   return (
     <>
-    <Head>
-      <title>Blog</title>
-    </Head>
-    <section className='p-main-x p-main-y'>
-      <section className='flex gap-4 mb-8 flex-wrap'>
-        {chipsLabels.map((label) => {
-          const number = categoryChipsData[label];
-          return (
-            <Chip
-              key={label}
-              label={label}
-              number={number}
-              active={selectedCategories.has(label)}
-              onClick={() => handleChipClick(label)}
-            />
-          );
-        })}
+      <Head>
+        <title>Blog</title>
+      </Head>
+      <section className='p-main-x p-main-y'>
+        <section className='flex gap-4 mb-8 flex-wrap'>
+          {chipsLabels.map((label) => {
+            const number = categoryChipsData[label];
+            return (
+              <Chip
+                key={label}
+                label={label}
+                number={number}
+                active={selectedCategories.has(label)}
+                onClick={() => handleChipClick(label)}
+              />
+            );
+          })}
+        </section>
+        <section className='flex flex-col gap-y-5'>
+          {selectPosts().map(({ title, date, category, slug, lead }) => (
+            <PostDescription
+              key={slug}
+              slug={slug}
+              title={title}
+              date={date}
+              category={category}
+            >
+              {lorem}
+            </PostDescription>
+          ))}
+        </section>
       </section>
-      <section className='flex flex-col gap-y-5'>
-        {selectPosts().map(({ title, date, category, slug, lead }) => (
-          <PostDescription
-            key={slug}
-            slug={slug}
-            title={title}
-            date={date}
-            category={category}
-          >
-            {lorem}
-          </PostDescription>
-        ))}
-      </section>
-    </section>
     </>
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const sortedPosts = await getSortedPostsData();
   return { props: { ...sortedPosts } };
 }

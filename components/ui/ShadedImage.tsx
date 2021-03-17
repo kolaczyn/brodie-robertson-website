@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import Proptypes from 'prop-types';
 import Image from 'next/image';
 
 interface PropsType {
@@ -7,7 +8,11 @@ interface PropsType {
   gradientColor: string;
 }
 
-export default function ShadedImage({ children, src, gradientColor }: PropsType) {
+export default function ShadedImage({
+  children,
+  src,
+  gradientColor,
+}: PropsType) {
   return (
     <div className='w-full h-64 relative'>
       <Image src={src} layout='fill' objectFit='cover' />
@@ -20,3 +25,9 @@ export default function ShadedImage({ children, src, gradientColor }: PropsType)
     </div>
   );
 }
+
+ShadedImage.propTypes = {
+  children: Proptypes.node.isRequired,
+  src: Proptypes.string.isRequired,
+  gradientColor: Proptypes.string.isRequired,
+};
