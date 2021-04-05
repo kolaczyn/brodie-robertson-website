@@ -38,20 +38,6 @@ export default function Home({ contentHtml, latestPosts, latestVideos }) {
             </Card>
           ))}
         </section>
-        <section className='grid grid-cols-3 gap-8'>
-          {latestVideos.map(
-            ({ videoId, description, publishedAt, thumbnail }) => (
-              <Card
-                key={videoId}
-                subtitle={publishedAt}
-                imgSrc={thumbnail}
-                href={`https://www.youtube.com/watch?v=${videoId}`}
-              >
-                {description}
-              </Card>
-            )
-          )}
-        </section>
       </section>
     </>
   );
@@ -60,13 +46,11 @@ export default function Home({ contentHtml, latestPosts, latestVideos }) {
 export const getStaticProps: GetStaticProps = async () => {
   const { contentHtml } = await getParsedMarkdownFile('pages/home.md');
   const { sortedPostsData } = await getSortedPostsData();
-  const latestVideos = await fetchLatestVideos();
   const latestPosts = sortedPostsData.slice(0, 3);
   return {
     props: {
       contentHtml,
       latestPosts,
-      latestVideos,
     },
     revalidate: 7200,
   };
