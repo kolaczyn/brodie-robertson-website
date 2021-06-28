@@ -10,7 +10,12 @@ html {
   @apply overflow-y-scroll;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-serif font-bold text-white;
 }
 h1 {
@@ -40,12 +45,12 @@ h6 {
   @apply flex items-center;
 }
 
-
 code {
   @apply bg-gray-800 rounded px-4 py-3 shadow;
 }
 
-article ol, article ul {
+article ol,
+article ul {
   @apply list-inside;
 }
 
@@ -105,4 +110,39 @@ and header align with the text in the buttons
  */
 .p-sidebar-btn-x {
   @apply px-5;
+}
+
+/* .btn-fade-effect-enter {
+  opacity: 0;
+}
+
+.btn-fade-effect-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.btn-fade-effect-exit {
+  opacity: 1;
+}
+
+.btn-fade-effect-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+} */
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 500ms;
 }
