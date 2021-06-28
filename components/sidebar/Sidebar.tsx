@@ -28,13 +28,13 @@ const sidebarData: Array<{
   { href: '/contact', Icon: ChatIcon, label: 'Contact' },
 ];
 
-export default function Sidebar({ width }: { width: string }) {
+export default function Sidebar({ className }: { className: string }) {
   return (
-    <div className={classnames(width, 'bg-sidebar min-h-screen')}>
+    <div className={classnames(className, 'bg-sidebar min-h-screen')}>
       <div className={'sticky top-0 min-h-screen px-4 p-main-y flex flex-col'}>
         <Logo />
-        <nav className='flex-grow'>
-          <ul className='flex flex-col'>
+        <nav className="flex-grow">
+          <ul className="flex flex-col">
             {sidebarData.map(({ href, Icon, label }) => (
               <li key={href}>
                 <SidebarBtn href={href} Icon={Icon}>

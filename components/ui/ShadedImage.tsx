@@ -14,7 +14,7 @@ export default function ShadedImage({
   gradientColor,
 }: PropsType) {
   return (
-    <div className='w-full h-64 relative'>
+    <div className='w-full h-80 relative'>
       <Image src={src} layout='fill' objectFit='cover' />
       <div
         className={`${children ? `bg-gradient-to-t ${gradientColor}` : ''}

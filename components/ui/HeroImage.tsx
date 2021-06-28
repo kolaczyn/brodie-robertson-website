@@ -10,7 +10,7 @@ interface HeroImageProps {
 
 export default function HeroImage({ imgSrc, children }: HeroImageProps) {
   return (
-    <header className='w-full h-64 relative'>
+    <header className='w-full h-80 relative'>
       <ShadedImage src={imgSrc} gradientColor='from-main'>
         <div className='px-14 py-2'>
           <h1>{children}</h1>
