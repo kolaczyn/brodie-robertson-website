@@ -24,8 +24,8 @@ export default function Home({ contentHtml, latestPosts, latestVideos }) {
         <article>
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </article>
-        <h2 className='mb-4'>Latest Blog Posts</h2>
-        <section className='grid grid-cols-3 gap-8 mb-8'>
+        <h2 className='my-4'>Latest Blog Posts</h2>
+        <section className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8'>
           {latestPosts.map(({ title, date, slug, image }) => (
             <Card
               key={title}
