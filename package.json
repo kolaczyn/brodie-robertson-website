@@ -25,6 +25,7 @@
     "googleapis": "^67.1.1",
     "gray-matter": "^4.0.2",
     "next": "^10.2.0",
+    "postcss-loader": "4",
     "preact": "^10.5.13",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
