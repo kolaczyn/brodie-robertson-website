@@ -22,11 +22,16 @@ describe('<PostDescription />', () => {
   });
 
   it('should correctly render the props on the component', () => {
-    const { getByText, getByRole } = render(<PostDescription {...expectedProps} />);
+    const { getByText, getByRole } = render(
+      <PostDescription {...expectedProps} />
+    );
     expect(getByText(expectedProps.title)).toBeTruthy();
     expect(getByText(expectedProps.date)).toBeTruthy();
     expect(getByText(expectedProps.category)).toBeTruthy();
     // click the header linking to the blog post
-    expect(getByText(expectedProps.title).closest('a')).toHaveAttribute('href', `/blog/${expectedProps.slug}`)
+    expect(getByText(expectedProps.title).closest('a')).toHaveAttribute(
+      'href',
+      `/blog/${expectedProps.slug}`
+    );
   });
 });

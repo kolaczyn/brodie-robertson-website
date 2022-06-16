@@ -19,8 +19,8 @@ function MyApp({ Component, pageProps }) {
     return () => window.removeEventListener('resize', listener);
   }, []);
   return (
-    <div className="bg-body text-white min-h-screen">
-      <div className="container mx-auto flex">
+    <div className='bg-body text-white min-h-screen'>
+      <div className='container mx-auto flex'>
         <Sidebar
           className={classnames(
             'lg:w-1/4 w-0',
@@ -31,12 +31,12 @@ function MyApp({ Component, pageProps }) {
           onClick={() => {
             isSidebarOn ? setIsSidebarOn(false) : null;
           }}
-          className="lg:w-3/4 w-full lg:mx-auto bg-main shadow-lg relative"
+          className='lg:w-3/4 w-full lg:mx-auto bg-main shadow-lg relative'
         >
           <Hamburger
             isSidebarOn={isSidebarOn}
             setIsSidebarOn={setIsSidebarOn}
-            className="fixed lg:hidden z-50 bottom-8 right-16"
+            className='fixed lg:hidden z-50 bottom-8 right-16'
           />
           <Component {...pageProps} />
         </main>

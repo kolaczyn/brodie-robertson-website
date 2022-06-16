@@ -82,4 +82,4 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
 export const getStaticProps: GetStaticProps = async () => {
   const sortedPosts = await getSortedPostsData();
   return { props: { ...sortedPosts } };
-}
+};
