@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import PostDescription from './PostDescription';
 
@@ -22,9 +22,7 @@ describe('<PostDescription />', () => {
   });
 
   it('should correctly render the props on the component', () => {
-    const { getByText, getByRole } = render(
-      <PostDescription {...expectedProps} />
-    );
+    const { getByText } = render(<PostDescription {...expectedProps} />);
     expect(getByText(expectedProps.title)).toBeTruthy();
     expect(getByText(expectedProps.date)).toBeTruthy();
     expect(getByText(expectedProps.category)).toBeTruthy();

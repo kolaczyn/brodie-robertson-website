@@ -7,12 +7,11 @@ import getParsedMarkdownFile, {
 } from '@/lib/loadFromMarkdownFiles';
 import Card from '@/components/ui/Card';
 import HeroImage from '@/components/ui/HeroImage';
-import fetchLatestVideos from '@/lib/fetchLatestVideos';
 
 const lorem =
   'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ratione hic commodi nemo error dolor...';
 
-export default function Home({ contentHtml, latestPosts, latestVideos }) {
+export default function Home({ contentHtml, latestPosts }) {
   return (
     <>
       <Head>

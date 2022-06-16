@@ -6,7 +6,7 @@ const channelsId: Array<string> = [
   'UCVls1GmFKf6WlTraIb_IaJg', // Distro Tube
 ];
 
-export default async () => {
+const fetchLatestVideo = async () => {
   const apiKey = process.env.YOUTUBE_API_KEY;
   if (apiKey === undefined)
     throw new Error('There is no YOUTUBE_API_KEY in .env.local file');
@@ -21,6 +21,7 @@ export default async () => {
         channelId: id,
         maxResults: 1,
       });
+      // @ts-ignore
       const video = result.data.items[0];
       return {
         videoId: video.id.videoId,
@@ -34,3 +35,5 @@ export default async () => {
 
   return results;
 };
+
+export default fetchLatestVideo;
