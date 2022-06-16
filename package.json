@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
+    "check-types": "tsc",
     "lint-prettier": "prettier --check ./{components,lib,pages}/**/*.{ts,tsx}",
     "lint-eslint": "eslint ./{components,lib,pages}/**/*.{ts,tsx}",
-    "lint": "yarn lint-prettier && yarn lint-eslint",
+    "lint": "yarn lint-prettier && yarn lint-eslint && tsc",
     "lint-prettier-fix": "prettier --write ./{components,lib,pages}/**/*.{ts,tsx}",
     "lint-eslint-fix": "eslint ./{components,lib,pages}/**/*.{ts,tsx} --fix",
     "lint-fix": "lint-prettier-fix && lint-eslint-fix"
