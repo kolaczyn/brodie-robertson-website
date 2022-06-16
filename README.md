@@ -1,6 +1,6 @@
 # Tech YouTuber's blog
 
-[Visit the website](https://brodie-robertson-website.vercel.app/)
+[Visit the website](https://tech-blog.kolaczyn.com)
 
 ## About
 
