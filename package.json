@@ -7,8 +7,12 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "prettier --check ./{components,lib,pages}/**/*.{ts,tsx}",
-    "lint-fix": "prettier --write ./{components,lib,pages}/**/*.{ts,tsx}"
+    "lint-prettier": "prettier --check ./{components,lib,pages}/**/*.{ts,tsx}",
+    "lint-eslint": "eslint ./{components,lib,pages}/**/*.{ts,tsx}",
+    "lint": "yarn lint-prettier && yarn lint-eslint",
+    "lint-prettier-fix": "prettier --write ./{components,lib,pages}/**/*.{ts,tsx}",
+    "lint-eslint-fix": "esilnt --fix ./{components,lib,pages}/**/*.{ts,tsx}",
+    "lint-fix": "lint-prettier-fix && lint-eslint-fix"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
