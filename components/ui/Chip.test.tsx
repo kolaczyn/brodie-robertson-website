@@ -20,6 +20,6 @@ describe('<Chip />', () => {
     );
     const btn = getByRole('button');
     fireEvent.click(btn);
-    expect(mockCallback).toHaveBeenCalled()
+    expect(mockCallback).toHaveBeenCalled();
   });
 });

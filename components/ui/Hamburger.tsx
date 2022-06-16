@@ -4,10 +4,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import classnames from 'classnames';
 
 export default function Hamburger({ className, isSidebarOn, setIsSidebarOn }) {
-
   const toggleButton = (e) => {
-    e.stopPropagation()
-    setIsSidebarOn(oldState => !oldState);
+    e.stopPropagation();
+    setIsSidebarOn((oldState) => !oldState);
   };
 
   return (
@@ -19,9 +18,9 @@ export default function Hamburger({ className, isSidebarOn, setIsSidebarOn }) {
       )}
     >
       {isSidebarOn ? (
-        <CloseIcon fontSize="large" />
+        <CloseIcon fontSize='large' />
       ) : (
-        <MenuIcon fontSize="large" />
+        <MenuIcon fontSize='large' />
       )}
     </button>
   );

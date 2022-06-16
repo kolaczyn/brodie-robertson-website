@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
 import ShadedImage from './ShadedImage';

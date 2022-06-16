@@ -33,16 +33,16 @@ export default async function getParsedMarkdownFile(pathToFile: string) {
 export async function getPagesData() {
   // gets data for pages ['/videos', '/podcast', '/donate', '/contact']
   const pagesDir = path.join(process.cwd(), 'markdown/pages');
-  const fileNames = ['videos', 'podcast', 'donate', 'contact']
+  const fileNames = ['videos', 'podcast', 'donate', 'contact'];
 
   const allPagesData = await Promise.all(
-  fileNames.map(async (fileName) => {
-    const fullPath = path.join(pagesDir, `${fileName}.md`)
-    const fileContents = await readFile(fullPath, 'utf-8')
+    fileNames.map(async (fileName) => {
+      const fullPath = path.join(pagesDir, `${fileName}.md`);
+      const fileContents = await readFile(fullPath, 'utf-8');
 
-    const matterResult = matter(fileContents);
+      const matterResult = matter(fileContents);
 
-    // TODO I should make this snippet a function
+      // TODO I should make this snippet a function
       const processedContent = await remark()
         .use(html)
         .process(matterResult.content);
@@ -53,10 +53,10 @@ export async function getPagesData() {
         slug: fileName,
         ...(matterResult.data as {
           title: string;
-        })
-      }
-  })
-  )
+        }),
+      };
+    })
+  );
 
   return allPagesData;
 }
@@ -96,13 +96,13 @@ export async function getSortedPostsData() {
   );
 
   // Figure out what categories are available and how many items are there in each category
-  const categoryChipsData: {[key: string]: number} = {}
+  const categoryChipsData: { [key: string]: number } = {};
   allPostsData.forEach((post) => {
     const { category } = post;
-    if (categoryChipsData.hasOwnProperty(category)) categoryChipsData[category]++;
+    if (categoryChipsData.hasOwnProperty(category))
+      categoryChipsData[category]++;
     else categoryChipsData[category] = 1;
   });
-  
 
   const sortedPostsData = allPostsData
     .slice()
