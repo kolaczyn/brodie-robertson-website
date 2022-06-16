@@ -62,7 +62,7 @@ export default function BlogPostsList({ sortedPostsData, categoryChipsData }) {
           })}
         </section>
         <section className='flex flex-col gap-y-5'>
-          {selectPosts().map(({ title, date, category, slug, lead }) => (
+          {selectPosts().map(({ title, date, category, slug }) => (
             <PostDescription
               key={slug}
               slug={slug}

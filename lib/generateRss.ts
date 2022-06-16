@@ -2,7 +2,7 @@ import RSS from 'rss';
 
 import { getSortedPostsData } from './loadFromMarkdownFiles';
 
-export default async () => {
+const generateRss = async () => {
   const feedOptions = {
     title: 'Tech Blog',
   };
@@ -15,3 +15,5 @@ export default async () => {
 
   return feed.xml();
 };
+
+export default generateRss;

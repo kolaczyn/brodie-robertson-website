@@ -15,7 +15,7 @@ export default function ShadedImage({
 }: PropsType) {
   return (
     <div className='w-full h-80 relative'>
-      <Image src={src} layout='fill' objectFit='cover' />
+      <Image src={src} layout='fill' objectFit='cover' alt='' />
       <div
         className={`${children ? `bg-gradient-to-t ${gradientColor}` : ''}
       w-full h-full absolute`}

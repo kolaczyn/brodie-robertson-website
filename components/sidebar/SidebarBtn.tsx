@@ -5,12 +5,13 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { SvgIconProps } from '@material-ui/core/SvgIcon';
 
-interface SidebarBtnProps {
+interface Props {
   href: string;
-  icon: React.FC<SvgIconProps>;
+  Icon: React.FC<SvgIconProps>;
   children: React.ReactNode;
 }
-export default function SidebarBtn({ href, Icon, children }) {
+
+export default function SidebarBtn({ href, Icon, children }: Props) {
   const router = useRouter();
   const path = router.asPath;
   // we treat '/blog/*' routes differently

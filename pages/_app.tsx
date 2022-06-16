@@ -9,7 +9,7 @@ import '@/styles/globals.css';
 function MyApp({ Component, pageProps }) {
   const [isSidebarOn, setIsSidebarOn] = useState(false);
   useEffect(() => {
-    const listener = (e: UIEvent) => {
+    const listener = () => {
       document.documentElement.clientWidth > 1024
         ? setIsSidebarOn(false)
         : null;
